@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Наталья Тарандина — Резюме</title>
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #1f2430;
+      --muted: #4e576a;
+      --accent: #2c40d0;
+      --shadow: 0 8px 24px rgba(24, 36, 70, 0.08);
+      --radius: 14px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 32px 18px 48px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 26px 24px;
+    }
+
+    .card + .card {
+      margin-top: 18px;
+    }
+
+    h1,
+    h2 {
+      margin: 0 0 12px;
+      line-height: 1.25;
+    }
+
+    h1 {
+      font-size: 34px;
+      letter-spacing: -0.02em;
+    }
+
+    h2 {
+      font-size: 24px;
+      color: var(--accent);
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    ul {
+      margin: 8px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      margin: 8px 0;
+      color: var(--text);
+      font-size: 17px;
+    }
+
+    li::before {
+      content: "— ";
+      color: var(--accent);
+    }
+
+    .project-title {
+      margin: 0 0 4px;
+      color: var(--muted);
+      font-size: 17px;
+      font-weight: 500;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 12px 18px;
+      border-radius: 10px;
+      background: var(--accent);
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .telegram {
+      margin-top: 10px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .hero-card {
+      padding: 32px 28px;
+    }
+
+    .hero-text {
+      margin-top: 4px;
+    }
+
+    .hero-benefit {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 400;
+      list-style: none;
+      padding: 0;
+    }
+
+    .hero-benefit li {
+      margin: 6px 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .hero-benefit small {
+      display: block;
+      margin-left: 18px;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .hero-benefit li::before {
+      content: "✔ ";
+      color: var(--accent);
+    }
+
+    .hero-button {
+      margin-top: 18px;
+      padding: 14px 22px;
+      font-size: 16px;
+      box-shadow: 0 8px 18px rgba(44, 64, 208, 0.24);
+    }
+
+    .hero-note {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    .demo-badge {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: right;
+    }
+
+    .app-header {
+      margin-bottom: 12px;
+      padding: 20px 24px;
+    }
+
+    .app-header-title {
+      margin: 0 0 6px;
+      font-size: 26px;
+      color: var(--text);
+      line-height: 1.25;
+    }
+
+    .app-header-subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .demo-end-screen {
+      min-height: 100vh;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+    }
+
+    .demo-end-card {
+      width: 100%;
+      max-width: 520px;
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px 24px;
+      text-align: left;
+    }
+
+    .demo-end-main-text {
+      margin-bottom: 14px;
+    }
+
+    .tariff-card {
+      margin-top: 14px;
+      background: #f8f9fd;
+      border-radius: 12px;
+      padding: 16px 14px;
+    }
+
+    .tariff-title {
+      margin: 0 0 8px;
+      font-size: 18px;
+      color: var(--text);
+    }
+
+    .tariff-text {
+      margin: 0;
+      font-size: 15px;
+      color: var(--muted);
+    }
+
+    .tariff-price {
+      margin-top: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .demo-end-actions {
+      margin-top: 14px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .unlock-input {
+      width: 100%;
+      margin-top: 12px;
+      padding: 10px 12px;
+      border: 1px solid #d9deeb;
+      border-radius: 10px;
+      font-size: 15px;
+      color: var(--text);
+    }
+
+    .unlock-button {
+      border: 0;
+      cursor: pointer;
+    }
+
+    .unlock-error {
+      min-height: 20px;
+      margin-top: 8px;
+      font-size: 14px;
+      color: #b00020;
+    }
+
+    .project-image {
+      display: block;
+      width: 100%;
+      max-width: 620px;
+      margin: 16px auto 0;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(24, 36, 70, 0.10);
+    }
+
+    .project-heading {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .project-note {
+      margin-top: 12px;
+      text-align: center;
+      font-size: 15px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <section class="demo-end-screen" id="demo-end-screen">
+    <div class="demo-end-card">
+      <h2>Демо-версия закончилась</h2>
+      <p class="demo-end-main-text">Вы уже протестировали систему и внесли данные.<br />Чтобы продолжить работу — активируйте доступ</p>
+      <div class="tariff-card">
+        <h3 class="tariff-title">Полный доступ</h3>
+        <p class="tariff-text">Без ограничений по времени<br />Все функции доступны<br />Данные сохраняются на вашем ПК</p>
+        <p class="tariff-price">Единоразово</p>
+      </div>
+      <div class="demo-end-actions">
+        <a class="button" href="https://t.me/tnatalina" target="_blank">Написать в Telegram</a>
+        <button class="button unlock-button" id="unlock-button" type="button">Ввести код доступа</button>
+      </div>
+      <input class="unlock-input" id="unlock-input" type="text" placeholder="Введите код доступа" autocomplete="off" />
+      <p class="unlock-error" id="unlock-error"></p>
+    </div>
+  </section>
+
+  <main class="container" id="app">
+    <section class="card app-header">
+      <h2 class="app-header-title">CRM для учета заказов</h2>
+      <p class="app-header-subtitle">Локальная система для бизнеса — работает без интернета</p>
+    </section>
+    <p class="demo-badge">Вы используете демо-версию (3 дня)</p>
+    <section class="card hero-card">
+      <h1>Наталья Тарандина</h1>
+      <p class="hero-text">Создаю системы учета и CRM для малого бизнеса<br />— порядок в заказах, клиентах и деньгах</p>
+      <ul class="hero-benefit">
+        <li>Работает на вашем ПК<small>Установка за 1 минуту</small></li>
+        <li>Без интернета<small>Стабильная работа всегда</small></li>
+        <li>Данные только у вас<small>Без облаков и VPN</small></li>
+      </ul>
+      <a class="button hero-button" href="https://disk.yandex.ru/d/w1O1azKrxx8YXQ" target="_blank" aria-label="Скачать демо версию">Скачать демо версию</a>
+      <p class="hero-note">Демо на 3 дня<br />Установка за 1 минуту</p>
+    </section>
+
+    <section class="card">
+      <h2>Кому это подходит</h2>
+      <ul>
+        <li>мастерам и сервисам (ремонт техники, автосервисы)</li>
+        <li>мастерам услуг (салоны красоты, бьюти, частные специалисты)</li>
+        <li>ателье и швейным мастерским</li>
+        <li>репетиторам и преподавателям</li>
+        <li>небольшому бизнесу без CRM</li>
+        <li>тем, кто ведет учет в Excel или вручную</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Чем я помогаю бизнесу</h2>
+      <ul>
+        <li>CRM и системы учета заказов</li>
+        <li>приложения для бизнеса</li>
+        <li>автоматизация процессов с помощью ИИ</li>
+      </ul>
+      <p>Дополнительно:</p>
+      <ul>
+        <li>лендинги</li>
+        <li>чат-боты</li>
+      </ul>
+    </section>
+
+    <section class="card" id="project">
+      <h2 class="project-heading">Как это выглядит на практике</h2>
+      <p class="project-title">Система учета заказов для бизнеса</p>
+      <ul>
+        <li>контроль клиентов и заказов</li>
+        <li>статусы работ</li>
+        <li>учет доходов и расходов</li>
+        <li>отчеты по прибыли</li>
+        <li>работает без интернета</li>
+      </ul>
+      <img class="project-image" src="ChatGPT Image 27 апр. 2026 г., 22_54_45.png" alt="Скрин системы CRM" />
+      <p class="project-note">Подходит для мастеров, сервисов и небольшого бизнеса</p>
+    </section>
+
+    <section class="card">
+      <h2>Контакты</h2>
+      <p>Если у вас учет в Excel или «в голове» — вы теряете деньги</p>
+      <p>Я помогаю это исправить с помощью простых систем</p>
+      <p class="telegram">Telegram: @tnatalina</p>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      var APP_STORAGE_KEY = "startDate";
+      var UNLOCK_STORAGE_KEY = "isUnlocked";
+      var ACCESS_CODES = ["pro123", "pro456", "pro789"];
+      var DEMO_DAYS = 3;
+      var demoMs = DEMO_DAYS * 24 * 60 * 60 * 1000;
+      var app = document.getElementById("app");
+      var demoEndScreen = document.getElementById("demo-end-screen");
+      var unlockInput = document.getElementById("unlock-input");
+      var unlockButton = document.getElementById("unlock-button");
+      var unlockError = document.getElementById("unlock-error");
+      var isUnlocked = localStorage.getItem(UNLOCK_STORAGE_KEY) === "true";
+
+      function showApp() {
+        demoEndScreen.style.display = "none";
+        app.style.display = "block";
+      }
+
+      function showLockedScreen() {
+        app.style.display = "none";
+        demoEndScreen.style.display = "flex";
+      }
+
+      if (isUnlocked) {
+        showApp();
+        return;
+      }
+
+      var startDate = localStorage.getItem(APP_STORAGE_KEY);
+      if (!startDate) {
+        startDate = new Date().toISOString();
+        localStorage.setItem(APP_STORAGE_KEY, startDate);
+      }
+
+      var startTime = new Date(startDate).getTime();
+      if (Number.isNaN(startTime)) {
+        startTime = Date.now();
+        localStorage.setItem(APP_STORAGE_KEY, new Date(startTime).toISOString());
+      }
+
+      var isExpired = Date.now() - startTime > demoMs;
+      if (isExpired) {
+        showLockedScreen();
+      } else {
+        showApp();
+      }
+
+      unlockButton.addEventListener("click", function () {
+        var code = unlockInput.value.trim();
+        if (ACCESS_CODES.indexOf(code) !== -1) {
+          localStorage.setItem(UNLOCK_STORAGE_KEY, "true");
+          unlockError.textContent = "";
+          showApp();
+          return;
+        }
+
+        unlockError.textContent = "Неверный код";
+      });
+    })();
+  </script>
+</body>
+</html>
